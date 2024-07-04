@@ -3,20 +3,27 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-// Factory constructor
+// Custom operators
 
-class Cat {
+class Cat extends Object {
   final String name;
   Cat(this.name);
-  factory Cat.fluffBall() {
-    return Cat('Fluffy');
-  }
+
+  @override bool operator == (covariant Cat other) => name == other.name;
+
+  @override
+  int get hashCode => name.hashCode;
+
 }
 
 void test(){
- final fluffBall = Cat.fluffBall();
- print(fluffBall.name);
-
+ final cat1 = Cat('Mittens');
+  final cat2 = Cat('Mittens');
+  if (cat1 == cat2) {
+    print('cat1 and cat2 are equal');
+  } else {
+    print('cat1 and cat2 are not equal');
+  }
 }
 
 
