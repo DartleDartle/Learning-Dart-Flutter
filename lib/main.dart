@@ -5,16 +5,20 @@ void main() {
 }
 
 class Person {
-  // Constructor with an initializer list.
+  // Methods 
   final String name;
 
   Person(this.name);
+
+  void printName() {
+    print(this.name);
+  }
 }
 
 void test(){
   // Create an instance of the class.
   final foo = Person('Jerry');
-  print(foo.name);
+  foo.printName();
 }
 
 
