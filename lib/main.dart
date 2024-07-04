@@ -3,23 +3,20 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-// Abstract class
+// Factory constructor
 
-abstract class LivingThings {
-  void breathe() {
-    print('Living things breathe');
-  }
-  void move() {
-    print('Living things move');
+class Cat {
+  final String name;
+  Cat(this.name);
+  factory Cat.fluffBall() {
+    return Cat('Fluffy');
   }
 }
 
-class Cat extends LivingThings {}
-
 void test(){
-  final fluffers = Cat();
-  fluffers.breathe();
-  fluffers.move();
+ final fluffBall = Cat.fluffBall();
+ print(fluffBall.name);
+
 }
 
 
