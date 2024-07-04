@@ -4,28 +4,26 @@ void main() {
   runApp(const MyApp());
 }
 
-// Enumeration in Dart
+// Classes in Dart
+// A class is a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or properties), and implementations of behavior (member functions or methods).
+class Person {
+  void run(){
+      print('Person is running');
+    }
 
-enum AnimalType {
-  cat,
-  dog,
-  bunny
+
+  void breathe(){
+      print('Person is breathing');
+    }
 }
 
-void test(AnimalType animalType){
- switch(animalType){
-   case AnimalType.cat:
-     print('Meow');
-     break;
-   case AnimalType.dog:
-     print('Woof');
-     break;
-   case AnimalType.bunny:
-     print('Hop');
-     break;
- }
- print("Finished");
+void test(){
+ final person = Person();
+  person.run();
+  person.breathe();
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test(AnimalType.cat);
+    test();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
