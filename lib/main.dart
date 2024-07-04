@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-// Inheritance and Subclassing
+// Abstract class
 
-class LivingThings {
+abstract class LivingThings {
   void breathe() {
     print('Living things breathe');
   }
