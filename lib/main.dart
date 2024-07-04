@@ -4,25 +4,17 @@ void main() {
   runApp(const MyApp());
 }
 
-// Classes in Dart
-// A class is a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or properties), and implementations of behavior (member functions or methods).
 class Person {
-  void run(){
-      print('Person is running');
-    }
+  // Constructor with an initializer list.
+  final String name;
 
-
-  void breathe(){
-      print('Person is breathing');
-    }
+  Person(this.name);
 }
 
 void test(){
-  // Creating an object of the class
-  // An object is an instance of a class. When a class is defined, no memory is allocated for the class. But when it is instantiated (i.e. an object is created) memory is allocated.
-  var foo = Person();
-  foo.run();
-  foo.breathe();
+  // Create an instance of the class.
+  final foo = Person('Jerry');
+  print(foo.name);
 }
 
 
