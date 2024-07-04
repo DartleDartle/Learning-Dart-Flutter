@@ -4,6 +4,8 @@ void main() {
   runApp(const MyApp());
 }
 
+// Enumeration in Dart
+
 enum AnimalType {
   cat,
   dog,
@@ -11,15 +13,18 @@ enum AnimalType {
 }
 
 void test(AnimalType animalType){
- if (animalType == AnimalType.cat){
-   print('Meow');
- } else if (animalType == AnimalType.dog){
-   print('Woof');
- } else if (animalType == AnimalType.bunny){
-   print('Squeak');
- } else {
-   print('Unknown animal');
+ switch(animalType){
+   case AnimalType.cat:
+     print('Meow');
+     break;
+   case AnimalType.dog:
+     print('Woof');
+     break;
+   case AnimalType.bunny:
+     print('Hop');
+     break;
  }
+ print("Finished");
 }
 
 class MyApp extends StatelessWidget {
