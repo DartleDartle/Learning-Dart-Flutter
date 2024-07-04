@@ -18,9 +18,11 @@ class Person {
 }
 
 void test(){
- final person = Person();
-  person.run();
-  person.breathe();
+  // Creating an object of the class
+  // An object is an instance of a class. When a class is defined, no memory is allocated for the class. But when it is instantiated (i.e. an object is created) memory is allocated.
+  var foo = Person();
+  foo.run();
+  foo.breathe();
 }
 
 
