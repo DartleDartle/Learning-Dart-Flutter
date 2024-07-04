@@ -3,22 +3,23 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
+// Inheritance and Subclassing
 
-class Person {
-  // Methods 
-  final String name;
-
-  Person(this.name);
-
-  void printName() {
-    print(this.name);
+class LivingThings {
+  void breathe() {
+    print('Living things breathe');
+  }
+  void move() {
+    print('Living things move');
   }
 }
 
+class Cat extends LivingThings {}
+
 void test(){
-  // Create an instance of the class.
-  final foo = Person('Jerry');
-  foo.printName();
+  final fluffers = Cat();
+  fluffers.breathe();
+  fluffers.move();
 }
 
 
