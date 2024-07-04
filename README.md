@@ -1,6 +1,6 @@
 # learningdart
 
-A new Flutter project.
+Repository to take track of the Dart/Flutter learning.
 
 ## Getting Started
 
