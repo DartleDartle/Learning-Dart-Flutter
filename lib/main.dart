@@ -5,25 +5,33 @@ void main() {
 }
 // Custom operators
 
-class Cat extends Object {
+class Cat {
   final String name;
   Cat(this.name);
-
-  @override bool operator == (covariant Cat other) => name == other.name;
-
-  @override
-  int get hashCode => name.hashCode;
-
 }
 
-void test(){
- final cat1 = Cat('Mittens');
-  final cat2 = Cat('Mittens');
-  if (cat1 == cat2) {
-    print('cat1 and cat2 are equal');
-  } else {
-    print('cat1 and cat2 are not equal');
+class Person {
+  final String firstName;
+  final String lastName;
+
+  Person(this.firstName, this.lastName);
+}
+
+extension FullName on Person {
+  String get fullName => '$firstName $lastName';
+}
+
+extension Run on Cat {
+  void run() {
+    print('$name is running');
   }
+}
+
+
+
+void test(){
+ final foo = Person('Foo', 'Bar');
+ print (foo.fullName); // Foo Bar
 }
 
 
