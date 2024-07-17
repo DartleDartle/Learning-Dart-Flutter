@@ -3,35 +3,16 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-// Custom operators
 
-class Cat {
-  final String name;
-  Cat(this.name);
-}
 
-class Person {
-  final String firstName;
-  final String lastName;
-
-  Person(this.firstName, this.lastName);
-}
-
-extension FullName on Person {
-  String get fullName => '$firstName $lastName';
-}
-
-extension Run on Cat {
-  void run() {
-    print('$name is running');
-  }
+Future<int> heavyFutureThatMultipliesByTwo(int a) {
+  return Future.delayed(const Duration(seconds: 3), () => a );
 }
 
 
-
-void test(){
- final foo = Person('Foo', 'Bar');
- print (foo.fullName); // Foo Bar
+void test() async{
+ final result = await heavyFutureThatMultipliesByTwo(10);
+ print(result);
 }
 
 
