@@ -6,18 +6,26 @@ void main() {
 }
 
 
-Iterable<int> getOneTwoThree() sync* {
-  yield 1;
-  yield 2;
-  yield 3;
+class PairOfStrings {
+  final String value1;
+  final String value2;
+  PairOfStrings(this.value1, this.value2);
 }
 
+class PairOfInts {
+  final int value1;
+  final int value2;
+  PairOfInts(this.value1, this.value2);
+}
+
+class Pair<A, B> {
+  final A value1;
+  final B value2;
+  Pair(this.value1, this.value2);
+}
 
 void test(){
-  print(getOneTwoThree());
-  for (final value in getOneTwoThree()) {
-    print(value);
-    }
+  final names = Pair('foo', 20);
 }
 
 
