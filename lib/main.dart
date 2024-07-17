@@ -6,18 +6,18 @@ void main() {
 }
 
 
-Stream<String> getName() {
-  return Stream.periodic(const Duration(seconds: 1), (value){
-    return 'Foo';
-  });
+Iterable<int> getOneTwoThree() sync* {
+  yield 1;
+  yield 2;
+  yield 3;
 }
 
 
-void test() async{
-  await for (final value in getName()) {
+void test(){
+  print(getOneTwoThree());
+  for (final value in getOneTwoThree()) {
     print(value);
-  }
-  print('done');
+    }
 }
 
 
